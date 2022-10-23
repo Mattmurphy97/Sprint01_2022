@@ -1,19 +1,30 @@
 // This is just to test the CLI program
 
-import java.util.*;
+import java.util.*; // For Scanner
+import java.io.*; // For Reading/Writing
+import java.time.*; // For Date/Time
 
 public class MockCLI {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
+
+        // Below is needed to write to a file (NOTE: throws IOException is needed):
+        //
+        // Create FileWriter below
+        // FileWriter appendFile = new FileWriter("Database\\db.txt");
+        //
+        // take variable name and use method .write("blah blah")
+        // appendFile.write("THIS WORKED");
+        //
+        // NEEDS TO CLOSE AFTER WRITING IS COMPLETE!
+        // appendFile.close();
 
         Display.mainMenuHeader();
         while (true) {
             Display.mainMenuOptions();
-
             int optionNum01 = sc.nextInt();
-            // sc.nextLine() is used here to fix a bug when using sc.nextInt()
-            // which sometimes results in upcoming input to be skipped for some reason
             sc.nextLine();
+
             System.out.println();
             if (optionNum01 == 1) {
                 System.out.println("Enter New Member's Full Name: ");
@@ -44,6 +55,7 @@ public class MockCLI {
 
                 System.out.println("Enter Start Date of Membership: ");
                 String optionNum10 = sc.nextLine();
+                optionNum10 = optionNum10.toLowerCase();
 
                 System.out.println("Membership Expires: ");
                 String optionNum11 = sc.nextLine();
@@ -100,6 +112,7 @@ public class MockCLI {
                 System.out.println("Invalid Selection, Please Try Again");
             }
         }
+
     }
 
 }
