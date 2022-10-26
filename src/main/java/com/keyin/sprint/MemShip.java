@@ -16,15 +16,23 @@ public class MemShip {
         this.duration = startDate.plusYears(1);
     }
 
-    public int getType() {
-        return this.type;
+    public String getType() {
+        if (type == 1) {
+            return "Normal";
+        } else if (type == 2) {
+            return "Trial";
+        } else if (type == 3) {
+            return "Special";
+        } else {
+            return "Family";
+        }
     }
 
     public double getCost() {
-        return this.cost;
+        return cost;
     }
 
-    public LocalDate getCurDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
@@ -33,7 +41,7 @@ public class MemShip {
     }
 
     public String toString() {
-        return type + "\n" + "Cost: " + cost + "\n" + "Start Date:  " + startDate + "\n"
-                + "Expire Date: " + duration;
+        return "Membership Type: " + getType() + "\nCost: " + getCost() + "\nStart Date:  " + getStartDate()
+                + "\nExpire Date: " + getExpireDate() + "\n";
     }
 }

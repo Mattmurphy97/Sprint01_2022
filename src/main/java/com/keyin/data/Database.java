@@ -1,10 +1,112 @@
 package com.keyin.data;
 
-
-import com.keyin.sprint.Members;
-
-import java.util.ArrayList;
+import java.util.*;
+import com.keyin.sprint.*;
 
 public class Database {
-    // ArrayList<Members> db = new ArrayList<>();
+
+    private ArrayList<Members> db = new ArrayList<Members>();
+    private ArrayList<Tourney> db2 = new ArrayList<Tourney>();
+
+    public Database() {
+        this.db = db;
+        this.db2 = db2;
+
+    }
+
+    public ArrayList<Members> getMemberList() {
+        return this.db;
+    }
+
+    public ArrayList<Tourney> getTourneyList() {
+        return this.db2;
+    }
+
+    public void addMemberToDb(Members addMember) {
+        db.add(addMember);
+    }
+
+    public void addTourneyToDb(Tourney addTourney) {
+        db2.add(addTourney);
+    }
+
+    public Members getMemIndex(int indexNum) {
+        return db.get(indexNum);
+    }
+
+    public Tourney getTourneyIndex(int indexNum) {
+        return db2.get(indexNum);
+    }
+
+    public void checkDbForMemberName(String searchName) {
+        for (int i = 0; i < db.size(); i++) {
+            String memberName = db.get(i).getMemInfo().getName();
+            if (memberName.equals(searchName) == true) {
+                System.out.println(db.get(i));
+            } else {
+                continue;
+            }
+        }
+    }
+
+    public void checkDbForMemberPhoneNum(String searchNum) {
+        for (int i = 0; i < db.size(); i++) {
+            String memberNum = db.get(i).getMemInfo().getPhone();
+            if (memberNum.equals(searchNum) == true) {
+                System.out.println(db.get(i));
+            } else {
+                continue;
+            }
+        }
+
+    }
+
+    public void checkDbForMemberEmail(String searchEmail) {
+        for (int i = 0; 1 < db.size(); i++) {
+            String memeberEmail = db.get(i).getMemInfo().getEmail();
+            if (memeberEmail.equals(searchEmail) == true) {
+                System.out.println(db.get(i));
+            } else {
+                continue;
+            }
+        }
+    }
+
+    public void checkDbForTourneyName(String searchTorneyName) {
+        for (int i = 0; i < db2.size(); i++) {
+            String tourneyName = db2.get(i).getTourneyName();
+            if (tourneyName.equals(searchTorneyName) == true) {
+                System.out.println(db2.get(i));
+            } else {
+                continue;
+            }
+        }
+    }
+
+    public void checkDbForTourneyFee(double searchTorneyFee) {
+        for (int i = 0; i < db2.size(); i++) {
+            double tourneyFee = db2.get(i).getEntryFee();
+            if (tourneyFee == searchTorneyFee) {
+                System.out.println(db2.get(i));
+            } else {
+                continue;
+            }
+        }
+    }
+
+    public void checkDbForTourneyPrize(double searchTorneyPrize) {
+        for (int i = 0; i < db2.size(); i++) {
+            double tourneyPrize = db2.get(i).getCashPrize();
+            if (searchTorneyPrize == tourneyPrize) {
+                System.out.println(db2.get(i));
+            } else {
+                continue;
+            }
+        }
+    }
+
+    public String toString() {
+        return "\n" + db;
+    }
+
 }

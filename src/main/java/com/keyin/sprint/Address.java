@@ -47,6 +47,7 @@ public class Address {
     }
 
     public String toString() {
-        return street + ", " + city + "\n" + prov + ", " + postal;
+        return "Street: " + getStreet() + "\nCity: " + getCity() + "\nProvince: " + getProv() + "\nPostal Code: "
+                + getPostal();
     }
 }

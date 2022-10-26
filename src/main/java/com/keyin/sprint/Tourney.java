@@ -1,7 +1,5 @@
 package com.keyin.sprint;
 
-import java.time.*;
-
 public class Tourney {
 
     private String tourneyName;
@@ -10,11 +8,11 @@ public class Tourney {
     private TourneyDate endDate;
     private double entryFee;
     private double cashPrize;
-//    private ?? particMems;
-//    private ?? finalStand;
+    // private ?? particMems;
+    // private ?? finalStand;
 
     public Tourney(String tourneyName, Address loc, TourneyDate startDate, TourneyDate endDate, double entryFee,
-                   double cashPrize){
+            double cashPrize) {
         this.tourneyName = tourneyName;
         this.loc = loc;
         this.startDate = startDate;
@@ -23,33 +21,32 @@ public class Tourney {
         this.cashPrize = cashPrize;
     }
 
-    public  String getTourneyName(){
+    public String getTourneyName() {
         return tourneyName;
     }
 
-    public Address getLoc(){
+    public Address getLoc() {
         return loc;
     }
 
-    public TourneyDate getStartDate(){
+    public TourneyDate getStartDate() {
         return startDate;
     }
 
-    public TourneyDate getEndDate(){
+    public TourneyDate getEndDate() {
         return endDate;
     }
 
-    public double getEntryFee(){
+    public double getEntryFee() {
         return entryFee;
     }
 
-    public double getCashPrize(){
+    public double getCashPrize() {
         return cashPrize;
     }
 
-    public String toString(){
-        return "Tourney Name: " + tourneyName + "\n" + "Location: " + loc + "\n" + "Start Time: " + startDate + "\n"
-                + "End Date: " + endDate;
+    public String toString() {
+        return getTourneyName() + "\n" + getLoc() + "\n" + getStartDate() + "\n" + getEndDate() + "\n";
     }
 
 }

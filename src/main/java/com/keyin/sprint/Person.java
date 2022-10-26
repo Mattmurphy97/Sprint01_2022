@@ -12,7 +12,7 @@ public class Person {
     }
 
     public String getName() {
-        return name;
+        return name.toLowerCase();
     }
 
     public String getPhone() {
@@ -20,7 +20,7 @@ public class Person {
     }
 
     public String getEmail() {
-        return email;
+        return email.toLowerCase();
     }
 
     public void setName(String name) {
@@ -36,6 +36,7 @@ public class Person {
     }
 
     public String toString() {
-        return "Name: " + name + "\n" + "Phone#: " + phoneNum + "\n" + "Email: " + email;
+        return "\nName: " + getName().toLowerCase() + "\nPhone #: " + getPhone() + "\nEmail: "
+                + getEmail().toLowerCase();
     }
 }
