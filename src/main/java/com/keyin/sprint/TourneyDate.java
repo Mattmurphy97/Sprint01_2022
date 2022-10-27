@@ -10,7 +10,6 @@ public class TourneyDate {
         this.year = year;
         this.month = month;
         this.day = day;
-
     }
 
     public int getYear() {

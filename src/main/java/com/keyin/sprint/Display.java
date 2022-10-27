@@ -19,7 +19,7 @@ public class Display {
 
     public static void mainMenuOptions() {
         System.out.println();
-        System.out.println("Please Select One of the Following Options:");
+        System.out.println("Main Menu: Select Option:");
         System.out.println("1. Add New Member");
         System.out.println("2. View Memeber Info");
         System.out.println("3. Add New Tournament");
@@ -38,16 +38,16 @@ public class Display {
     }
 
     public static void viewMemersOptions() {
-        System.out.println("Please One of the Following Options:");
+        System.out.println("View Members: Select Option");
         System.out.println("1. View All Members");
-        System.out.println("2. Search For Members & View Detail");
-        System.out.println("3. Search for Members & Edit Details");
+        System.out.println("2. Search & View Members Detail");
+        System.out.println("3. Search & Edit Members Details");
         System.out.println("4. Back to Main Menu");
         System.out.print("Select: ");
     }
 
     public static void searchForMemersInfo() {
-        System.out.println("Please One of the Following Options:");
+        System.out.println("Search Options: Select Option");
         System.out.println("1. Search For Members by Name");
         System.out.println("2. Search For Members by Phone#");
         System.out.println("3. Search For Members by Email");
@@ -58,16 +58,16 @@ public class Display {
     }
 
     public static void viewTourneyOptions() {
-        System.out.println("Please One of the Following Options:");
+        System.out.println("View Tournaments: Select Options");
         System.out.println("1. View All Tournaments");
-        System.out.println("2. Search For Tournaments & View Details");
-        System.out.println("3. Search for Tournaments & Edit Details");
+        System.out.println("2. Search & View Tournament Details");
+        System.out.println("3. Search & Edit Tournament Details");
         System.out.println("4. Back to Main Menu");
         System.out.print("Select: ");
     }
 
     public static void searchForTourneyInfo() {
-        System.out.println("Please One of the Following Options:");
+        System.out.println("Search Options: Select Options");
         System.out.println("1. Search Tournaments by Name");
         System.out.println("2. Search Tournaments by Entry Fee");
         System.out.println("3. Search Tournaments by Cash Prize");

@@ -11,7 +11,8 @@ public class Tourney {
     // private ?? particMems;
     // private ?? finalStand;
 
-    public Tourney(String tourneyName, Address loc, TourneyDate startDate, TourneyDate endDate, double entryFee,
+    public Tourney(String tourneyName, Address loc, TourneyDate startDate, TourneyDate endDate,
+            double entryFee,
             double cashPrize) {
         this.tourneyName = tourneyName;
         this.loc = loc;
@@ -23,6 +24,10 @@ public class Tourney {
 
     public String getTourneyName() {
         return tourneyName;
+    }
+
+    public void setTourneyName(String updateName) {
+        this.tourneyName = updateName;
     }
 
     public Address getLoc() {
@@ -41,12 +46,21 @@ public class Tourney {
         return entryFee;
     }
 
+    public void setEntryFee(double updateFee) {
+        this.entryFee = updateFee;
+    }
+
     public double getCashPrize() {
         return cashPrize;
     }
 
+    public void setCashPrize(double updatePrize) {
+        this.cashPrize = updatePrize;
+    }
+
     public String toString() {
-        return getTourneyName() + "\n" + getLoc() + "\n" + getStartDate() + "\n" + getEndDate() + "\n";
+        return getTourneyName() + "\n" + getLoc() + "\nEntry Fee: " + entryFee + "\nCash Prize: " + cashPrize
+                + "\nStart Date: " + getStartDate() + "\nEnd Date " + getEndDate() + "\n";
     }
 
 }

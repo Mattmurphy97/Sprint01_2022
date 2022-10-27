@@ -90,8 +90,8 @@ public class MockCLI {
                 optionNum08 = optionNum08.toUpperCase();
 
                 // Initialize optionNum09 so we can use it outside of the next loop
-                // Had an issue while setting cost. Cost depends on type and both are created at
-                // the same time resulting in cost displaying incorrect value. So here we
+                // Had an issue while setting cost. Cost depends on type and both are created
+                // together resulting in cost displaying incorrect value. So here we
                 // initialize a cost @ 0 and change that value pending on the Membership Type
                 // the user selects, and adjusts the cost accordingly
                 int optionNum09;
@@ -106,19 +106,23 @@ public class MockCLI {
                     if (optionNum09 == 1) {
                         setCost = 50;
                         break;
+
                         // If Trial
                     } else if (optionNum09 == 2) {
                         setCost = 0.01;
                         break;
+
                         // If Special
                     } else if (optionNum09 == 3) {
                         setCost = 40;
                         break;
+
                         // If Family
                     } else if (optionNum09 == 4) {
                         // will write more conditions for family memType
                         setCost = 90;
                         break;
+
                     } else {
                         // Display error
                         System.out.println("Invalid Entry, Please Try Again");
@@ -198,9 +202,10 @@ public class MockCLI {
                         String searchOption02 = sc.nextLine();
                         searchOption02.toLowerCase();
                         db.checkDbForMemberName(searchOption02);
+
                         System.out.println("Update Member's Name to: ");
                         String searchOption05 = sc.nextLine();
-                        // SETTER GOES HERE
+                        db.UpdateDbMemberName(searchOption02, searchOption05);
 
                     } else if (searchOption03 == 2) {
                         System.out.println("Search Members by Phone#:");
@@ -208,7 +213,7 @@ public class MockCLI {
                         db.checkDbForMemberPhoneNum(searchOption02);
                         System.out.println("Update Member's Phone# to: ");
                         String searchOption05 = sc.nextLine();
-                        // SETTER GOES HERE
+                        db.UpdateDbMemberPhoneNum(searchOption02, searchOption05);
 
                     } else if (searchOption03 == 3) {
                         System.out.println("Search Members by Email:");
@@ -217,7 +222,7 @@ public class MockCLI {
                         db.checkDbForMemberEmail(searchOption02);
                         System.out.println("Update Member's Email to :");
                         String searchOption05 = sc.nextLine();
-                        // SETTER GOES HERE
+                        db.UpdateDbMemberEmail(searchOption02, searchOption05);
 
                     } else {
                         continue;
@@ -238,7 +243,7 @@ public class MockCLI {
                 String optionNum03 = sc.nextLine();
                 System.out.print("Enter City Name: ");
                 String optionNum04 = sc.nextLine();
-                // No postal code, set to NL.
+                // No province, set to NL.
                 System.out.print("Enter Postal Code: ");
                 String optionNum05 = sc.nextLine();
                 optionNum05.toUpperCase();
@@ -311,18 +316,21 @@ public class MockCLI {
                     if (viewOption02 == 1) {
                         System.out.print("Search Tournaments by Name: ");
                         String viewOption03 = sc.nextLine();
+                        System.out.println();
                         db2.checkDbForTourneyName(viewOption03);
 
                     } else if (viewOption02 == 2) {
                         System.out.println("Search Tournaments by Entry Fee");
                         int viewOption03 = sc.nextInt();
                         sc.nextLine();
+                        System.out.println();
                         db2.checkDbForTourneyFee(viewOption03);
 
                     } else if (viewOption02 == 3) {
                         System.out.println("Search Tournaments by Cash Prize");
                         int viewOption03 = sc.nextInt();
                         sc.nextLine();
+                        System.out.println();
                         db2.checkDbForTourneyPrize(viewOption03);
 
                     } else {
@@ -337,26 +345,33 @@ public class MockCLI {
                     if (viewOption02 == 1) {
                         System.out.print("Search Tournament's by Name: ");
                         String viewOption03 = sc.nextLine();
+                        System.out.println();
                         db2.checkDbForTourneyName(viewOption03);
                         System.out.println("Update Tournament's Name to: ");
                         String viewOption04 = sc.nextLine();
-                        // SETTER GOES HERE
+                        db2.UpdateDbTourneyName(viewOption03, viewOption04);
 
                     } else if (viewOption02 == 2) {
                         System.out.print("Search Tournament's by Entry Fee: ");
-                        String viewOption03 = sc.nextLine();
-                        db2.checkDbForTourneyName(viewOption03);
+                        double viewOption03 = sc.nextInt();
+                        sc.nextLine();
+                        System.out.println();
+                        db2.checkDbForTourneyFee(viewOption03);
                         System.out.println("Update Tournament's Entry Fee to: ");
-                        String viewOption04 = sc.nextLine();
-                        // SETTER GOES HERE
+                        double viewOption04 = sc.nextInt();
+                        sc.nextLine();
+                        db2.UpdateDbTourneyFee(viewOption03, viewOption04);
 
                     } else if (viewOption02 == 3) {
                         System.out.print("Search Tournament's by Cash Prize: ");
-                        String viewOption03 = sc.nextLine();
-                        db2.checkDbForTourneyName(viewOption03);
+                        double viewOption03 = sc.nextInt();
+                        sc.nextLine();
+                        db2.checkDbForTourneyPrize(viewOption03);
+                        System.out.println();
                         System.out.println("Update Tournament's Cash Prize to: ");
-                        String viewOption04 = sc.nextLine();
-                        // SETTER GOES HERE
+                        double viewOption04 = sc.nextInt();
+                        sc.nextLine();
+                        db2.UpdateDbTourneyPrize(viewOption03, viewOption04);
 
                     } else {
                         continue;

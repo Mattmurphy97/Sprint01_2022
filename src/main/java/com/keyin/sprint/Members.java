@@ -8,9 +8,9 @@ public class Members {
     private Address memAddress;
     private MemShip memType;
     // When Tourny class is complete, use these variables.
-    // private Tourny curTourny;
-    // private Tourny memHistory;
-    // private Tourny upComing;
+    // private Tourney curTourny;
+    // private Tourney memHistory;
+    // private Tourney upComing;
 
     public Members(Person memInfo, Address memAddress, MemShip memType) {
         this.memInfo = memInfo;
@@ -25,6 +25,10 @@ public class Members {
 
     public String getName() {
         return memInfo.getName();
+    }
+
+    public void setName(String nameToSet) {
+        setName(nameToSet);
     }
 
     public String getPhone() {
