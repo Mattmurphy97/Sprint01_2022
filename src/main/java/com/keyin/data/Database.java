@@ -38,6 +38,10 @@ public class Database {
         db2.add(addTourney);
     }
 
+    public void addTourneyToRegMem(Tourney addTourney) {
+        db2.add(addTourney);
+    }
+
     public void checkDbForMemberName(String searchName) {
         for (int i = 0; i < db.size(); i++) {
             String memberName = db.get(i).getMemInfo().getName();
@@ -45,6 +49,15 @@ public class Database {
                 System.out.println(db.get(i));
             } else {
                 continue;
+            }
+        }
+    }
+
+    public void updateRegMemList(String searchName, String addMemToRegLest) {
+        for (int i = 0; i < db2.size(); i++) {
+            String memberName = db.get(i).getMemInfo().getName();
+            if (memberName.equals(searchName) == true) {
+                // db2.get(i).getRegMembers().set(i, memberName)
             }
         }
     }
@@ -165,6 +178,42 @@ public class Database {
             double tourneyFee = db2.get(i).getCashPrize();
             if (tourneyFee == searchTorneyPrize == true) {
                 db2.get(i).setCashPrize(updateTorneyPrize);
+            } else {
+                continue;
+            }
+        }
+    }
+
+    public void searchNameAndAddTourneyRegList(String searchTorneyName, String addRegMem) {
+        for (int i = 0; i < db2.size(); i++) {
+            String tourneyName = db2.get(i).getTourneyName();
+            if (tourneyName.equals(searchTorneyName) == true) {
+                db2.get(i).setRegMembers(addRegMem);
+                break;
+            } else {
+                continue;
+            }
+        }
+    }
+
+    public void searchPhoneNumAndAddTourneyRegList(String searchTorneyName, String addRegMem) {
+        for (int i = 0; i < db2.size(); i++) {
+            String tourneyName = db2.get(i).getTourneyName();
+            if (tourneyName.equals(searchTorneyName) == true) {
+                db2.get(i).setRegMembers(addRegMem);
+                break;
+            } else {
+                continue;
+            }
+        }
+    }
+
+    public void searchEmailNumAndAddTourneyRegList(String searchTorneyName, String addRegMem) {
+        for (int i = 0; i < db2.size(); i++) {
+            String tourneyName = db2.get(i).getTourneyName();
+            if (tourneyName.equals(searchTorneyName) == true) {
+                db2.get(i).setRegMembers(addRegMem);
+                break;
             } else {
                 continue;
             }

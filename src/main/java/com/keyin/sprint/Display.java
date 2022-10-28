@@ -24,7 +24,8 @@ public class Display {
         System.out.println("2. View Memeber Info");
         System.out.println("3. Add New Tournament");
         System.out.println("4. View Tournament Info");
-        System.out.println("5. Exit Program");
+        System.out.println("5. Sign Up Member to Tournaments");
+        System.out.println("6. Exit Program");
         System.out.print("Select: ");
     }
 

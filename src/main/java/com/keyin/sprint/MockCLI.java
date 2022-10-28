@@ -15,8 +15,8 @@ public class MockCLI {
         // Populate Tournaments Mock Database for demonstration purposes
         Tourney dummyTourney01 = new Tourney("springer invitational",
                 new Address("123 springdale place", "marystown", "NL", "A0E2M0"),
-                new TourneyDate(2023, 10, 15),
-                new TourneyDate(2023, 10, 3), 0, 5000);
+                new TourneyDate(2023, 10, 3),
+                new TourneyDate(2023, 10, 15), 0, 5000);
 
         Tourney dummyTourney02 = new Tourney("jones annual fundraiser",
                 new Address("1 logy bay rd", "st john's", "NL", "A1R9W0"),
@@ -46,6 +46,9 @@ public class MockCLI {
         db2.addTourneyToDb(dummyTourney01);
         db2.addTourneyToDb(dummyTourney02);
         db2.addTourneyToDb(dummyTourney03);
+
+        db.getMemberList();
+        db2.getTourneyList();
 
         // CLI Starts Here //
         Display.mainMenuHeader();
@@ -382,6 +385,42 @@ public class MockCLI {
                 }
 
             } else if (optionNum01 == 5) {
+                System.out.println();
+                Display.searchForMemersInfo();
+                int searchOptions01 = sc.nextInt();
+                sc.nextLine();
+                if (searchOptions01 == 1) {
+                    System.out.println("Search Members by Name:");
+                    String searchOption02 = sc.nextLine();
+                    searchOption02.toLowerCase();
+                    db.checkDbForMemberName(searchOption02);
+                    System.out.println("Sign Up " + searchOption02 + " for Which Tournament: ");
+                    String searchOption03 = sc.nextLine();
+                    db2.searchNameAndAddTourneyRegList(searchOption03, searchOption02);
+
+                } else if (searchOptions01 == 2) {
+                    System.out.println("COMING SOON");
+                    // System.out.println("Search Members by Phone#:");
+                    // String searchOption02 = sc.nextLine();
+                    // searchOption02.toLowerCase();
+                    // db.checkDbForMemberPhoneNum(searchOption02);
+                    // System.out.println("Sign Up Member for Which Tournament: ");
+                    // String searchOption03 = sc.nextLine();
+                    // db2.searchPhoneNumAndAddTourneyRegList(searchOption03, searchOption02);
+
+                } else if (searchOptions01 == 3) {
+                    System.out.println("COMING SOON");
+                    // System.out.println("Search Members by Email#:");
+                    // String searchOption02 = sc.nextLine();
+                    // searchOption02.toLowerCase();
+                    // db.checkDbForMemberEmail(searchOption02);
+                    // System.out.println("Sign Up Member for Which Tournament: ");
+                    // String searchOption03 = sc.nextLine();
+                    // db2.searchEmailNumAndAddTourneyRegList(searchOption03, searchOption02);
+
+                }
+
+            } else if (optionNum01 == 6) {
                 // close the program
                 System.out.println("Goodbye!");
                 System.out.println();

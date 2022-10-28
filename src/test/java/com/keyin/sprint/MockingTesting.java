@@ -27,7 +27,7 @@ public class MockingTesting {
         ArrayList<Person> personList = new ArrayList<Person>();
         ArrayList<Tourney> tourneyList = new ArrayList<Tourney>();
 
-        Person person1 = new Person("Jen", "1231231234", "jen@jen.com");
+        Person person1 = new Person("jen", "1231231234", "jen@jen.com");
         personList.add(person1);
 
         Tourney tourney1 = new Tourney("some tournament championship",
@@ -42,10 +42,12 @@ public class MockingTesting {
         // Standard J-Unit testing --> Compairing objects test
         Assertions.assertNotSame(person1, tourney1);
         Assertions.assertNotNull(person1);
+        Assertions.assertNotNull(tourney1);
 
         // Testing name in person1 object
         Assertions.assertEquals("jen", person1.getName());
         Assertions.assertNotEquals("jen1", person1.getName());
+        // System.out.println("THIS PASSED!");
         person1.setName("jen1");
         Assertions.assertEquals("jen1", person1.getName());
         Assertions.assertNotEquals("jen", person1.getName());

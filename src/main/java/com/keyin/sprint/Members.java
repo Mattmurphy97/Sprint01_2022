@@ -8,7 +8,7 @@ public class Members {
     private Address memAddress;
     private MemShip memType;
     // When Tourny class is complete, use these variables.
-    // private Tourney curTourny;
+    // private int curTourny;
     // private Tourney memHistory;
     // private Tourney upComing;
 

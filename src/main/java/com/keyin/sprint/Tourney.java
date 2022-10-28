@@ -1,5 +1,7 @@
 package com.keyin.sprint;
 
+import java.util.ArrayList;
+
 public class Tourney {
 
     private String tourneyName;
@@ -8,18 +10,18 @@ public class Tourney {
     private TourneyDate endDate;
     private double entryFee;
     private double cashPrize;
-    // private ?? particMems;
+    private ArrayList<String> regMembers = new ArrayList<String>();
     // private ?? finalStand;
 
     public Tourney(String tourneyName, Address loc, TourneyDate startDate, TourneyDate endDate,
-            double entryFee,
-            double cashPrize) {
+            double entryFee, double cashPrize) {
         this.tourneyName = tourneyName;
         this.loc = loc;
         this.startDate = startDate;
         this.endDate = endDate;
         this.entryFee = entryFee;
         this.cashPrize = cashPrize;
+        this.regMembers = regMembers;
     }
 
     public String getTourneyName() {
@@ -58,9 +60,18 @@ public class Tourney {
         this.cashPrize = updatePrize;
     }
 
+    public ArrayList<String> getRegMembers() {
+        return regMembers;
+    }
+
+    public void setRegMembers(String member) {
+        this.regMembers.add(member);
+    }
+
     public String toString() {
         return getTourneyName() + "\n" + getLoc() + "\nEntry Fee: " + entryFee + "\nCash Prize: " + cashPrize
-                + "\nStart Date: " + getStartDate() + "\nEnd Date " + getEndDate() + "\n";
+                + "\nStart Date: " + getStartDate() + "\nEnd Date " + getEndDate() + "\nRegistered Members: \n"
+                + getRegMembers() + "\n";
     }
 
 }
